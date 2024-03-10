@@ -1,0 +1,18 @@
+def comm_suffix(list1):
+    if not list1:
+        return ''
+    
+    suffix =""
+    lists=[f[::-1] for f in list1]
+    print(lists)
+    for char in zip(*lists):
+        print(char)
+        if all(c == char[0] for c in char):
+            suffix += char[0]
+        else:
+            break
+    return suffix[::-1]
+
+# Driver code
+list1 = ["flying", "running", "jumping"]
+print(comm_suffix(list1))
